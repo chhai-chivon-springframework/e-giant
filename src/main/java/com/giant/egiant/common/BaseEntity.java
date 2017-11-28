@@ -1,24 +1,23 @@
 package com.giant.egiant.common;
 
-import sun.rmi.runtime.Log;
-
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * @author by chhai.chivon  on 11/27/17.
  */
 @MappedSuperclass
-public abstract class BaseEntity extends AbstractEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
 
-    private Log id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long  id;
 
-
-    public Log getId() {
+    public long  getId() {
         return id;
     }
 
-    public void setId(Log id) {
+    public void setId(long  id) {
         this.id = id;
     }
 }

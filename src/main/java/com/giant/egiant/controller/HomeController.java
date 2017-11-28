@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-
+    //https://github.com/Nasruddin/spring-boot-jwt-auth
+    //https://github.com/Nasruddin/spring-boot-samples
     @RequestMapping(value = "/" , method = RequestMethod.GET)
     protected String index(ModelMap modelMap) {
         modelMap.put("key","value");
