@@ -11,4 +11,22 @@ import javax.persistence.Table;
 @Table(name = "tb_category")
 public class Category extends BaseEntity {
 
+    private String name;
+    private String nameEn;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
 }

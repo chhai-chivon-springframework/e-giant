@@ -4,7 +4,6 @@ import com.giant.egiant.common.BaseService;
 import com.giant.egiant.models.Product;
 import com.giant.egiant.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Service;
  * @author by chhai.chivon  on 11/27/17.
  */
 @Service
-@Scope("prototype")
 public class ProductService implements BaseService<Product> {
     @Autowired
     private ProductRepository productRepository;

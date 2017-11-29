@@ -11,6 +11,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_product")
 public class Product extends BaseEntity {
+    private String name;
+    private String  nameEn;
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
 }

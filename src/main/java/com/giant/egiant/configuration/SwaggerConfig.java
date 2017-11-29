@@ -2,14 +2,16 @@ package com.giant.egiant.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
+import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger.web.UiConfiguration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
  * @author by chhai.chivon  on 11/28/2017.
@@ -19,15 +21,24 @@ import static springfox.documentation.builders.PathSelectors.regex;
 public class SwaggerConfig {
 
     @Bean
-    public Docket movieApi() {
-        return  new Docket(DocumentationType.SWAGGER_2)
-                .groupName("movie-api")
-                .useDefaultResponseMessages(false)
-                .apiInfo(apiInfo())
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .paths(regex("/api.*"))
-                .build();
-
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(apiInfo());
+    }
+    private ApiInfo apiInfo() {
+        ApiInfo apiInfo = new ApiInfo(
+                "WEB SERVICE REST API",
+                null,
+                null,
+                null,
+                new Contact("", "", ""),
+                null,
+                null);
+        return apiInfo;
     }
 
     @Bean
@@ -35,11 +46,4 @@ public class SwaggerConfig {
         return new UiConfiguration(null);
     }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Simple Movie API")
-                .description("Api for Movies")
-                .version("1.0")
-                .build();
-    }
 }
