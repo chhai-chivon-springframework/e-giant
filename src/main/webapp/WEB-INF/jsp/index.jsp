@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" src="${pageContext.request.contextPath}/resources/static/css/style.css">
+    <script src="${pageContext.request.contextPath}/resources/static/js/js.js"></script>
 </head>
 <body>
 <div class="row">
@@ -15,8 +18,7 @@
     </div>
 </div>
 
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -58,84 +60,6 @@
 
 <div class="container">
     <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p> <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p> <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p> <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p> <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p> <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-    <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p> <h3>Right Aligned Navbar</h3>
-    <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 </body>
