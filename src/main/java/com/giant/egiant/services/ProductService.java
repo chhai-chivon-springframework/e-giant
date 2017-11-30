@@ -16,10 +16,9 @@ import org.springframework.stereotype.Service;
 public class ProductService implements BaseService<Product> {
     @Autowired
     private ProductRepository productRepository;
+
     @Override
-    public Page<Product> findAll(PageRequest pageRequest) {
-        return productRepository.findAll(pageRequest);
-    }
+    public Page<Product> findAll(PageRequest pageRequest) {return productRepository.findAll(pageRequest);}
 
     @Override
     public Product findOne(Long id) {
