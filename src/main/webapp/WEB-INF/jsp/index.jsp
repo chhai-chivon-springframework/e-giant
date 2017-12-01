@@ -30,6 +30,11 @@
 </head>
 <body>
 
+<%@include file="includes/header.jsp" %>
+
+
+<%@include file="includes/footer.jsp" %>
+
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Online Store</h1>

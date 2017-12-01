@@ -1,9 +1,10 @@
 package com.giant.egiant.controller;
 
 import com.giant.egiant.common.BaseController;
+import com.giant.egiant.common.Response;
 import com.giant.egiant.models.Product;
 import com.giant.egiant.services.ProductService;
-import io.swagger.annotations.Api;
+import com.giant.egiant.utils.Constant;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -23,8 +24,7 @@ import java.util.Map;
  * @author by chhai.chivon  on 11/28/2017.
  */
 @RestController
-@RequestMapping("/api/products")
-@Api("/api/products")
+@RequestMapping(Constant.SLUSH+""+Constant.API)
 public class ProductController extends BaseController<Product> {
 
     private ProductService productService;
@@ -38,26 +38,25 @@ public class ProductController extends BaseController<Product> {
         this.messageSource = messageSource;
     }
 
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "Find all products", notes = "Retrieving the collection of products", response = Product[].class)
-    @ApiResponses({
-            @ApiResponse(code = 200, message = "Success", response = Product[].class)
-    })
+    @RequestMapping(value = Constant.SLUSH+Constant.PRODUCTS ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Map<String, Object>> findAll(
             @RequestParam(value = "page", required = false, defaultValue = "0") int page,
             @RequestParam(value = "limit", required = false, defaultValue = "15") int limit
     ){
-        Page<Product> products= null;
+        Page<Product> products = null;
+        Response<Product> response = new Response<>();
         try {
             products =  productService.findAll(new PageRequest(page,limit));
+            response.setData(products);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.print("Error" + e.getMessage());
         }
-        return responseJson(products, HttpStatus.OK);
+        return responseJson(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+
+    @RequestMapping(value = Constant.SLUSH+Constant.PRODUCTS +Constant.SLUSH+Constant.ID , method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Find product", notes = "Retrieving the collection of product", response = Product.class)
     @ApiResponses({
             @ApiResponse(code = 200, message = "Success", response = Product.class)
@@ -74,11 +73,7 @@ public class ProductController extends BaseController<Product> {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, headers = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Save product", notes = "Insert the collection of product", response = Product.class)
-    @ApiResponses({
-            @ApiResponse(code = 200, message = "Success", response = Product.class)
-    })
+    @RequestMapping(value =Constant.SLUSH+Constant.PRODUCTS ,method = RequestMethod.POST, headers = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> save(@RequestBody Product product) {
         map = new HashMap<>();
         try {
