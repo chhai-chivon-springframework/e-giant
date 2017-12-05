@@ -15,8 +15,8 @@ public class HomeController {
 
 
 
-    @RequestMapping(value = "/" , method = RequestMethod.GET)
-    protected String index() {
-        return "index";
-    }
+//    @RequestMapping(value = "/" , method = RequestMethod.GET)
+//    protected String index() {
+//        return "index";
+//    }
 }
